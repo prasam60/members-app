@@ -244,7 +244,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingVertical: 12,
         paddingHorizontal: 32,
-        // borderRadius: 4,
         borderWidth: 1,
         backgroundColor: '#4A4AFB',
       },

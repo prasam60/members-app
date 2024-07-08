@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         height:'100%',
         borderTopColor: DEFAULT_COMPONENT_BACKGROUND_COLOR,
         borderTopWidth:3,
-        // flex: 1
     }
 })
 
