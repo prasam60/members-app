@@ -8,11 +8,11 @@ import { ScrollView, StyleSheet } from "react-native";
 const EditPage = () => {
     const route = useRoute()
 
-    const {member} : Member = route.params
+    const params : {member:Member} = route.params
 
     return (
         <ScrollView style={styles.back}>
-            <MemberDetails member={member}/>
+            <MemberDetails member={params.member}/>
         </ScrollView>
     );
 }
