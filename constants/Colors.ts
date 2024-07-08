@@ -24,3 +24,7 @@ export const Colors = {
     tabIconSelected: tintColorDark,
   },
 };
+
+export const DEFAULT_BACKGROUND_COLOR = '#DCDCDC';
+export const DEFAULT_COMPONENT_BACKGROUND_COLOR = 'white';
+export const DEFAULT_BORDER_COLOR = '#c5c5c5';

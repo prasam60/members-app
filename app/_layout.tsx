@@ -1,37 +1,29 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { DEFAULT_BACKGROUND_COLOR } from '@/constants/Colors';
+import { Stack } from 'expo-router/stack';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+export default function Layout() {
+  return <Stack screenOptions={{
+    headerTitleAlign:'center',
+    headerStyle: {backgroundColor:DEFAULT_BACKGROUND_COLOR},
+  }}>
+    <Stack.Screen
+      name='index' 
+      options={{
+        title: 'List page',
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
-  );
+      }}
+      />
+      <Stack.Screen
+        name='edit-page' 
+        options={{
+          title: 'Edit page',
+      }}
+      />
+      <Stack.Screen
+        name='add-page' 
+        options={{
+          title: 'Add page',
+      }}
+      />
+  </Stack>;
 }
